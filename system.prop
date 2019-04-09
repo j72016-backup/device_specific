@@ -1,4 +1,42 @@
-# Battery Tweaks
+# Audio
+audio_hal.disable_two_mic=true
+
+# ART
+dalvik.vm.dex2oat-filter=speed
+dalvik.vm.image-dex2oat-filter=speed
+ro.sys.fw.dex2oat_thread_count=8
+
+# DPI
+ro.sf.lcd_density=320
+
+# Higher fling velocities to smooth scrolling
+# and provide better responsiveness
+ro.min.fling_velocity=160
+ro.max.fling_velocity=20000
+
+# Nfc
+ro.nfc.port=I2C
+ro.nfc.sec_hal=true
+
+# Performance and battery
+wifi.supplicant_scan_interval=300
+persist.sys.purgeable_assets=1
+persist.service.pcsync.enable=0
+persist.service.lgospd.enable=0
+profiler.force_disable_err_rpt=1
+profiler.force_disable_ulog=1
+ro.config.nocheckin=1
+ro.kernel.android.checkjni=0
+persist.sys.use_dithering=0
+ro.kernel.checkjni=0
+debug.kill_allocating_task=0
+ro.debuggable=1
+dalvik.vm.checkjni=false
+debugtool.anrhistory=0
+profiler.debugmonitor=false
+profiler.launch=false
+profiler.hung.dumpdobugreport=false
+persist.sys.scrollingcache=3
 power.saving.mode=1
 ro.ril.disable.power.collapse=0 
 ro.ril.power_collapse=1
@@ -7,19 +45,5 @@ power_supply.wakeup=enable
 # ro.product.first_api_level indicates the first api level the device has commercially launched on.
 ro.product.first_api_level=23
 
-# DPI
-ro.sf.lcd_density=320
-
-
-# Nfc
-ro.nfc.port=I2C
-ro.nfc.sec_hal=true
-
 # Wifi
-net.tethering.noprovisioning=true
-
-# Audio
-audio_hal.disable_two_mic=false
-
-# Sdcardfs
-ro.sys.sdcardfs=true
+wifi.direct.interface=p2p-dev-wlan0
