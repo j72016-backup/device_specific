@@ -17,7 +17,6 @@
 LOCAL_PATH := device/samsung/j7xelte
 
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
-#TARGET_COPY_OUT += /system/vendor
 
 # Manifest
 PRODUCT_COPY_FILES += \
@@ -36,7 +35,7 @@ BUILD_FINGERPRINT := samsung/j7xeltexx/j7xelte:8.0.0/R16NW/A320FXXU4CRL1:user/re
 $(call inherit-product, device/samsung/exynos7870-common/device-common.mk)
 
 # call the proprietary setup
-$(call inherit-product, vendor/samsung/j7xelte/j7xeltee-vendor.mk)
+$(call inherit-product, vendor/samsung/j7xelte/j7xelte-vendor.mk)
 
 # Dalvik heap
 $(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
