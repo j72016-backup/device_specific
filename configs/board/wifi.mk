@@ -1,6 +1,7 @@
 # Wifi
 BOARD_HAVE_SAMSUNG_WIFI          := true
 BOARD_WLAN_DEVICE                := bcmdhd
+BOARD_WLAN_DEVICE_REV            := bcm4343
 WPA_SUPPLICANT_VERSION           := VER_0_8_X
 WPA_SUPPLICANT_USE_HIDL          := true
 BOARD_WPA_SUPPLICANT_DRIVER      := NL80211
