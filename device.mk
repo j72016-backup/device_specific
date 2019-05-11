@@ -1,5 +1,5 @@
-#00000
-# Copyright (C) 2017 The LineageOS Project
+#
+# Copyright (C) 2019 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -18,13 +18,11 @@ LOCAL_PATH := device/samsung/j7xelte
 
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
+TARGET_SPECIFIC_HEADER_PATH += $(LOCAL_PATH)/include
+
 # Manifest
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/manifest/manifest.xml:system/vendor/manifest.xml
-
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/wifi/p2p_supplicant_overlay.conf:system/vendor/etc/wifi/p2p_supplicant_overlay.conf \
-    $(LOCAL_PATH)/configs/wifi/wpa_supplicant_overlay.conf:system/vendor/etc/wifi/wpa_supplicant_overlay.conf
 
 BUILD_FINGERPRINT := samsung/j7xeltexx/j7xelte:8.0.0/R16NW/A320FXXU4CRL1:user/release-keys
 
