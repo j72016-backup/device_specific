@@ -44,6 +44,3 @@ power_supply.wakeup=enable
 
 # ro.product.first_api_level indicates the first api level the device has commercially launched on.
 ro.product.first_api_level=23
-
-# Wifi
-wifi.direct.interface=p2p-dev-wlan0
