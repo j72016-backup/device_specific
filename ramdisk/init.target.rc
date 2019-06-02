@@ -96,23 +96,28 @@ chown system radio /sys/class/sensors/light_sensor/lux
 # Permissions for System LSI NFC
 # NFC : Permissions for NFC
     chmod 0660 /dev/sec-nfc
+# NFC : change owner
     chown nfc nfc /dev/sec-nfc
+
+# Permissions for NXP NFC
+# NFC : Permissions for NFC
+    chmod 0660 /dev/pn547
+# NFC : change owner
+    chown nfc nfc /dev/pn547
+
+# Permissions for NXP ESE
+    chmod 0660 /dev/p61
+    chown system system /dev/p61
+
 # Permissions for S.LSI ESE
     chmod 0660 /dev/p3
     chown system system /dev/p3
 
-# NFC
-    mkdir /data/nfc 0700 nfc nfc
-    mkdir /data/nfc/param 0700 nfc nfc
-    mkdir /data/bcmnfc 0700 nfc nfc
-    mkdir /data/bcmnfc/param 0700 nfc nfc
-
 # Samsung Pay
     # mkdir /efs/pfw_data 0760 spay spay
 
-# MST/NFC Switch
-  # chown spay system /dev/mst_ctrl
-    chmod 0660 /dev/mst_ctrl
+# NFC : create data/nfc for nv storage
+    mkdir /efs/sec_efs/nfc 0500 nfc nfc
 
 # Permission for Wifi firmware_path
     chown wifi wifi /sys/module/dhd/parameters/firmware_path
@@ -134,6 +139,13 @@ on nonencrypted
 
 on property:vold.decrypt=trigger_restart_framework
     mkdir /data/misc/mcRegistry 0775 system system
+
+# sem_daemon
+service sem_daemon /system/bin/sem_daemon
+    class core
+    user system
+    group system nfc
+    disabled
 
 service sswap /sbin/sswap -s -f 1536
     class core
